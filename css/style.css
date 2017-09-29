@@ -291,7 +291,7 @@ header {
 	line-height:20px;
 	font-size:13px;
 	color:#666;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .navmenu li:hover a,
@@ -382,11 +382,11 @@ header {
 	font-weight:300;
 	line-height:20px;
 	font-size: 13px;
-	color: #999;	
+	color: #999;
 	background: none;
 	border: 0;
-	box-shadow: none;	 
-	transition: all 0.3s ease-in-out; 
+	box-shadow: none;
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 #search-form input:focus {
@@ -492,7 +492,7 @@ header {
 	-o-transform:translateY(-50%);
 	-ms-transform:translateY(-50%);
 	-webkit-transform:translateY(-50%);
-	transition: all 0.5s ease-in-out; 
+	transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
 }
 .cleancode_block .tab-pane.active {
@@ -535,7 +535,7 @@ header {
 	background-position:0 -60px;
 	background-size:100% auto;
 	-webkit-background-size:100% auto;
-	transition: transform 0.2s ease-in-out; 
+	transition: transform 0.2s ease-in-out;
 	-webkit-transition: -webkit-transform 0.2s ease-in-out;
 }
 .cleancode_block .nav-tabs li a.i1 i {background-image:url(../images/i1.png);}
@@ -582,7 +582,7 @@ header {
 	-o-transform:translateY(-30px);
 	-ms-transform:translateY(-30px);
 	-webkit-transform:translateY(-30px);
-	transition: all 0.5s ease-in-out; 
+	transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
 }
 .nav-tabs li.active a span {
@@ -618,14 +618,14 @@ header {
 	line-height:20px;
 	font-size:13px;
 	color:#1C1C1C;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .purpose_block .btn-active:hover span:before {color:#fff;}
 .purpose_block .btn-active span {
 	position: relative;
 	display: inline-block;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .purpose_block .btn-active:hover span,
@@ -650,7 +650,7 @@ header {
 
 .work_item {
 	position:relative;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .owl-item:hover .work_item {
@@ -670,7 +670,7 @@ header {
 	text-align:center;
 	opacity:0;
 	background-color:rgba(0,0,0,0.8);
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .work_item:hover .work_description {opacity:1;}
@@ -684,7 +684,7 @@ header {
 	-o-transform:translateY(-100%);
 	-ms-transform:translateY(-100%);
 	-webkit-transform:translateY(-100%);
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .work_item:hover .work_description .work_descr_cont {
@@ -720,7 +720,7 @@ header {
 	background-position:0 0;
 	background-size:100% auto;
 	-webkit-background-size:100% auto;
-	transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+	transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
 	-webkit-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .work_item:hover a.zoom {
@@ -743,7 +743,7 @@ header {
 	margin:0 -2px 0 -3px;
 	border:2px solid #ccc;
 	font-family: FontAwesome;
-	transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
 }
 #project_prev:hover, #project_close:hover, #project_next:hover {z-index:2; border-color:#333;}
@@ -753,7 +753,7 @@ header {
 	line-height:46px;
 	font-size:26px;
 	color:#ccc;
-	transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
 }
 #project_close i {margin:0 -2px;}
@@ -793,7 +793,7 @@ ul.project_info li span {color:#979797;}
 
 .our_clients .client_img {
 	opacity:0.5;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .our_clients .client_img:hover {opacity:1;}
@@ -830,7 +830,7 @@ ul.project_info li span {color:#979797;}
 	text-align:center;
 	opacity:0;
 	background-color:rgba(0,0,0,0.8);
-	transition: all 0.5s ease-in-out; 
+	transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
 }
 .crewman_item:hover .crewman_descr {opacity:1;}
@@ -844,7 +844,7 @@ ul.project_info li span {color:#979797;}
 	-o-transform:translateY(-100%);
 	-ms-transform:translateY(-100%);
 	-webkit-transform:translateY(-100%);
-	transition: all 0.5s ease-in-out; 
+	transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
 }
 .crewman_item:hover .crewman_descr .crewman_descr_cont {
@@ -873,7 +873,7 @@ ul.project_info li span {color:#979797;}
 	width:100%;
 	opacity:0;
 	text-align:center;
-	transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+	transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
 	-webkit-transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 .crewman_item .crewman_social a {
@@ -942,7 +942,7 @@ ul.project_info li span {color:#979797;}
 	top:0;
 	width:100%;
 	height:100%;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .post_item:hover .post_item_img:before {background-color:rgba(0,0,0,0.8);}
@@ -978,7 +978,7 @@ ul.project_info li span {color:#979797;}
 	background-position:0 0;
 	background-size:100% auto;
 	-webkit-background-size:100% auto;
-	transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+	transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
 	-webkit-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .post_item:hover .post_item_img a.link {
@@ -1001,7 +1001,7 @@ ul.project_info li span {color:#979797;}
 	width:auto;
 	max-width:none;
 	height:100%;
-	transition: opacity 0.3s ease-in-out; 
+	transition: opacity 0.3s ease-in-out;
 	-webkit-transition: opacity 0.3s ease-in-out;
 }
 .recent_posts_small:hover .post_item_img_small img {opacity:0.5;}
@@ -1036,7 +1036,7 @@ ul.project_info li span {color:#979797;}
 	width:auto;
 	max-width:none;
 	height:100%;
-	transition: opacity 0.3s ease-in-out; 
+	transition: opacity 0.3s ease-in-out;
 	-webkit-transition: opacity 0.3s ease-in-out;
 }
 .recent_posts_widget:hover .post_item_img_widget img {opacity:0.5;}
@@ -1117,7 +1117,7 @@ footer h4 {color:#fff;}
 	left:0;
 	right:0;
 	height:401px;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 #map iframe {width:100%; height:399px;}
@@ -1142,7 +1142,7 @@ footer h4 {color:#fff;}
 	line-height:46px;
 	font-size:26px;
 	color:#fff;
-	transition: all 0.3s ease-in-out; 
+	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
 .map_hide i {margin:0 -2px;}
@@ -1198,11 +1198,11 @@ input[type="text"] {
 	font-size: 12px;
 	color: #333;
 	font-style:normal;
-	border-radius: 0;	
+	border-radius: 0;
 	background: none;
 	border: 2px solid #242424;
 	box-shadow: none;
-	transition: border-color 0.3s ease-in-out; 
+	transition: border-color 0.3s ease-in-out;
 	-webkit-transition: border-color 0.3s ease-in-out;
 }
 textarea {
@@ -1253,7 +1253,7 @@ input[type="color"]:focus {
 	line-height:20px;
 	font-size:13px;
 	color:#333;
-	background: none; 
+	background: none;
 	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 }
@@ -1311,7 +1311,7 @@ input[type="color"]:focus {
 	background-position:0 0;
 	background-size:100% auto;
 	-webkit-background-size:100% auto;
-	transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+	transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
 	-webkit-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .blog_post:hover a.zoom {
@@ -1656,7 +1656,7 @@ input[type="color"]:focus {
 /*	RESPONSIVE STYLES
 /*-----------------------------------------------------------------------------------*/
 
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
 	.parallax, .cleancode_block, #team, .top_slider .slide1, .top_slider .slide2, .top_slider .slide3 {background-attachment:scroll !important; background-position:0 0;}
 	.top_slider .slide1, .top_slider .slide2, .top_slider .slide3 {background-size:cover !important;}
 
@@ -1664,13 +1664,13 @@ input[type="color"]:focus {
 
 @media (max-width: 1024px) {
 
-	
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
 	.parallax, .cleancode_block, #team {background-attachment:scroll !important; background-size:100% auto !important; -webkit-background-size:100% auto !important;}
-	
-	
+
+
 	h2 {font-size:35px; line-height:35px;}
 
 /* __________ Menu __________ */
@@ -1684,72 +1684,72 @@ input[type="color"]:focus {
 	.cleancode_block .nav-tabs li a i {background-position:0 -45px;}
 	.nav-tabs li a:hover i {background-position:0 -90px; transform:translateY(-5px); -o-transform:translateY(-5px); -ms-transform:translateY(-5px); -webkit-transform:translateY(-5px);}
 	.nav-tabs li.active a i {background-position:0 0; transform:translateY(-10px); -o-transform:translateY(-10px); -ms-transform:translateY(-10px); -webkit-transform:translateY(-10px);}
-	
-	
+
+
 	.purpose_block p {font-size:15px; line-height:22px;}
-	
-	
+
+
 	.work_item a.zoom {width:40px; height:24px; margin-left:-20px;}
 	.work_item:hover a.zoom {bottom:30px;}
-	
-	
+
+
 	.img_wrapper {width:137px !important;}
-	
-	
+
+
 	.post_item_img a.link {width:40px; height:24px; margin:0 0 -12px -20px;}
 	.post_item_img a.link:hover {background-position:0 -24px;}
 	.post_item_content a.title {font-size:19px; line-height:24px;}
-	
-	
+
+
 	.owl-theme .owl-controls {top:-69px;}
 	.owl-theme .owl-controls .owl-buttons div {width:50px; height:50px;}
 	.owl-theme .owl-controls .owl-buttons div:before {width:48px; height:48px; line-height:46px;}
-	
-	
-	
+
+
+
 /* __________ Blog __________ */
 	.blog_post_descr hr {margin:15px 0;}
-	
+
 	.blog_post_img {width:400px; height:314px;}
 	.blog_post_title {font-size:24px; line-height:27px;}
 	.blog_post_content {font-size:14px; line-height:22px;}
-	
-	
+
+
 	.single_blog_post_title{font-size:44px; line-height:50px;}
-	
-	
+
+
 
 /* __________ Sidebar __________ */
 	.widget_meta li a {font-size:17px; line-height:20px;}
-	
+
 	.post_item_img_widget{width:220px; height:146px;}
 	.post_item_content_widget a.title {font-size:16px; line-height:20px;}
 
-	
-	
-	
+
+
+
 
 /* __________ All Styles __________ */
 	.breadcrumbs_block {padding:50px 0;}
-	
-	
+
+
 	.map_hide {margin-left:435px;}
-	
-	
+
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 	.logo a {font-size:22px;}
-	
-	
+
+
 	#search-form input:focus {width:42px;}
-	
+
 
 /* __________ Menu __________ */
 	.navmenu ul li a {padding-left:10px; padding-right:10px; font-size:12px;}
-	
-	
-	
+
+
+
 /* __________ Index __________ */
 	.cleancode_block p.title {font-size:60px; line-height:60px;}
 	.cleancode_block span {font-size:20px; line-height:24px;}
@@ -1759,75 +1759,75 @@ input[type="color"]:focus {
 	.cleancode_block .nav-tabs li a i {background-position:0 -45px;}
 	.nav-tabs li a:hover i {background-position:0 -90px; transform:translateY(-5px); -o-transform:translateY(-5px); -ms-transform:translateY(-5px); -webkit-transform:translateY(-5px);}
 	.nav-tabs li.active a i {background-position:0 0; transform:translateY(-10px); -o-transform:translateY(-10px); -ms-transform:translateY(-10px); -webkit-transform:translateY(-10px);}
-	
-	
+
+
 	.purpose_block {padding-top:35px;}
 	.purpose_block .ipad_img1 {margin-top:-50px;}
 	.purpose_block p {font-size:12px; line-height:20px;}
-	
-	
+
+
 	.work_item a.zoom {width:40px; height:24px; margin-left:-20px;}
 	.work_item:hover a.zoom {bottom:30px;}
-	
-	
+
+
 	.img_wrapper {width:100px !important;}
-	
-	
+
+
 	.post_item_img a.link {width:40px; height:24px; margin:0 0 -12px -20px;}
 	.post_item_img a.link:hover {background-position:0 -24px;}
 	.post_item_content a.title {font-size:15px; line-height:20px;}
 	.post_item_content {padding-top:15px;}
 	.post_item_inf a {font-size:12px; padding-right:5px;}
 	.post_item_inf li {padding-right:5px;}
-	
-	
+
+
 	.owl-theme .owl-controls {top:-69px;}
 	.owl-theme .owl-controls .owl-buttons div {width:50px; height:50px;}
 	.owl-theme .owl-controls .owl-buttons div:before {width:48px; height:48px; line-height:46px;}
-	
-	
+
+
 	.crewman_item .crewman_social a {width:36px; height:36px; margin:0 2px 0 5px; font-size:17px; line-height:34px;}
 	.crewman_item:hover .crewman_social {bottom:30px;}
-	
-	
+
+
 	.testim_content {font-size:17px; line-height:24px;}
-	
+
 
 /* __________ Blog __________ */
 	.blog_post_descr hr {margin:15px 0;}
-	
+
 	.blog_post_img {width:400px; height:314px;}
 	.blog_post_title {font-size:24px; line-height:27px;}
 	.blog_post_content {font-size:14px; line-height:22px;}
-	
-	
+
+
 	.single_blog_post_title{font-size:44px; line-height:50px;}
-	
-	
+
+
 
 /* __________ Sidebar __________ */
 	.widget_meta li a {font-size:17px; line-height:20px;}
-	
+
 	.post_item_img_widget{width:220px; height:146px; float:left; margin-right:30px;}
 	.post_item_content_widget a.title {font-size:16px; line-height:20px;}
 
-	
-	
-	
+
+
+
 
 /* __________ All Styles __________ */
 	.breadcrumbs_block {padding:50px 0;}
 	.breadcrumbs_block h2 {font-size:60px; line-height:64px;}
 	.breadcrumbs_block p {font-size:21px; line-height:24px;}
-	
+
 
 /* __________ Footer __________ */
 	footer {position:static; left:auto; bottom:auto; transform:none; -webkit-transform:none;}
-	
-	
+
+
 	.map_hide {margin-left:325px;}
-	
-	
+
+
 	.respond_clear {clear:both; height:0; font-size:0;}
 
 
@@ -1835,26 +1835,26 @@ input[type="color"]:focus {
 
 @media (max-width: 767px) {
 	.container {padding-left:15px; padding-right:15px;}
-	
-	
+
+
 	h2 {font-size:30px; line-height:32px;}
-	
-	
+
+
 	.logo a {font-size:22px;}
-	
-	
+
+
 	#search-form input:focus {width:42px;}
-	
-	
+
+
 /* __________ Menu __________ */
 	a.menu_toggler {display:inline-block; float:right; margin: 20px 0 0 20px; width:40px; height:40px; text-align:center; line-height:38px; font-size:23px; color:#fff; background-color:#333;}
 	a.menu_toggler:hover {background-color:#333;}
-	
+
 	.navmenu {position:absolute; left:0; right:0; top:80px; background-color:#fff;}
 	.navmenu ul {padding:10px 0;}
 	.navmenu ul li {display:block; text-align:left;}
 	.navmenu ul li a {padding:4px 20px;}
-	
+
 	.sub-menu ul {display:block; position:static; width:100%; box-shadow:none; padding:0; margin:0;}
 	.sub-menu ul:before {display:none !important;}
 	.navmenu li.sub-menu:hover, .navmenu li.sub-menu.active_page {background:none;}
@@ -1873,51 +1873,51 @@ input[type="color"]:focus {
 	.cleancode_block .nav-tabs li a i {background-position:0 -45px;}
 	.nav-tabs li a:hover i {background-position:0 -90px; transform:translateY(-5px); -o-transform:translateY(-5px); -ms-transform:translateY(-5px); -webkit-transform:translateY(-5px);}
 	.nav-tabs li.active a i {background-position:0 0; transform:translateY(-10px); -o-transform:translateY(-10px); -ms-transform:translateY(-10px); -webkit-transform:translateY(-10px);}
-	
-	
+
+
 	.purpose_block {padding-top:35px;}
 	.ipad_img_in {width:350px; margin:0 auto;}
 	.purpose_block .ipad_img1 {margin-top:40px;}
 	.purpose_block p {font-size:12px; line-height:20px;}
-	
-	
+
+
 	.work_item a.zoom {width:40px; height:24px; margin-left:-20px;}
 	.work_item:hover a.zoom {bottom:30px;}
-	
-	
+
+
 	.our_clients .row {text-align:center; margin:0 auto; width:450px;}
 	.client_img {width:140px; display:inline-block;}
 	.img_wrapper {width:110px !important;}
-	
-	
+
+
 	.post_item_img a.link {width:40px; height:24px; margin:0 0 -12px -20px;}
 	.post_item_img a.link:hover {background-position:0 -24px;}
 	.post_item_content a.title {font-size:15px; line-height:20px;}
 	.post_item_content {padding-top:15px;}
 	.post_item_inf a {font-size:12px; padding-right:5px;}
 	.post_item_inf li {padding-right:5px;}
-	
-	
+
+
 	.owl-theme .owl-controls {top:-69px;}
 	.testimonials .owl-theme .owl-controls {top:-49px;}
 	.owl-theme .owl-controls .owl-buttons div {width:50px; height:50px;}
 	.owl-theme .owl-controls .owl-buttons div:before {width:48px; height:48px; line-height:46px;}
-	
-	
+
+
 	.crewman_item .crewman_social a {width:36px; height:36px; margin:0 2px 0 5px; font-size:17px; line-height:34px;}
 	.crewman_item:hover .crewman_social {bottom:30px;}
-	
-	
+
+
 	.testim_content {font-size:17px; line-height:24px;}
-	
-	
-	
+
+
+
 	#news .recent_posts {width:450px; margin:0 auto;}
-	
-	
+
+
 /* __________ Blog __________ */
 	.blog_post_descr hr {margin:15px 0;}
-	
+
 	.blog_post_img {width:200px; height:157px; margin-right:20px;}
 	.blog_post_title {font-size:19px; line-height:22px;}
 	.blog_post_descr hr {clear:both; border:0;}
@@ -1926,32 +1926,32 @@ input[type="color"]:focus {
 	.blog_post_info li {padding-right:15px;}
 	.blog_post_info li:before {right:6px;}
 	.blog_post_content {padding-top:20px;}
-	
+
 	.pagination li {width:40px; height:40px;}
 	.pagination li a {font-size:16px; line-height:38px;}
 	.pagination li.active a, .pagination li a:focus, .pagination li a:hover {font-size:18px;}
-	
-	
+
+
 	.single_blog_post_title{font-size:44px; line-height:50px;}
-	
-	
+
+
 /* __________ Single Blog Post __________ */
 	.single_blog_post_date {margin:0;}
 	.single_blog_post_title {font-size:26px; line-height:32px;}
-	
+
 	.comment_note {padding:0 0 20px;}
-	
-	
+
+
 
 /* __________ Sidebar __________ */
 	.widget_meta li a {font-size:17px; line-height:20px;}
-	
+
 	.post_item_img_widget{width:220px; height:146px; float:left; margin-right:30px;}
 	.post_item_content_widget a.title {font-size:16px; line-height:20px;}
 
-	
-	
-	
+
+
+
 
 /* __________ All Styles __________ */
 	.breadcrumbs_block {padding:40px 0;}
@@ -1961,60 +1961,60 @@ input[type="color"]:focus {
 
 /* __________ Footer __________ */
 	footer {position:static; left:auto; bottom:auto; transform:none; -webkit-transform:none;}
-	
-	
+
+
 	.map_hide {margin:0; left:auto; right:15px;}
-	
-	
+
+
 	.respond_clear {clear:both; height:0; font-size:0;}
-	
-	
+
+
 }
 
 @media (max-width: 479px) {
 
 	#search-form {display:none;}
-	
-	
+
+
 /* __________ Index __________ */
 	h2 {font-size:26px; line-height:26px;}
-	
-	
+
+
 	.purpose_block .btn {padding:10px; margin:10px 5px 0 0;}
-	
-	
+
+
 	.cleancode_block p.title {font-size:26px; line-height:26px;}
 	.cleancode_block .nav-tabs {width:290px;}
 	.cleancode_block .nav-tabs li {padding:0;}
 	.cleancode_block .nav-tabs li a {width:96px; height:96px;}
-	
-	
+
+
 	.ipad_img_in {width:290px;}
-	
-	
+
+
 	.our_clients .row {width:290px;}
-	
-	
+
+
 	.testimonials .owl-theme .owl-controls {top:0;}
-	
-	
+
+
 	#news .recent_posts {width:290px;}
-	
-	
+
+
 /* __________ Blog __________ */
 	.blog_post_img {float:none; margin:0 0 20px; width:290px; height:227px;}
 	.blog_post_descr hr {border-bottom:2px solid #e9e9e9;}
 	.blog_post_content {padding-top:0;}
-	
+
 /* __________ Single Blog Post __________ */
 	.single_blog_post_title {font-size:17px; line-height:22px;}
 	.single_blog_post_content {font-size:13px; line-height:20px;}
 
-	
-	
+
+
 /* __________ Sidebar __________ */
 	.post_item_img_widget {float:none; margin-right:0;}
-	
+
 
 
 /* __________ Bootstrap Style __________ */
@@ -2033,37 +2033,3 @@ input[type="color"]:focus {
 	.col-ss-1 {width: 8.333333333333332%;}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
