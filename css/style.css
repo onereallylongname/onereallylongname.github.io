@@ -95,6 +95,8 @@ a:hover, a:focus {text-decoration:none; color:#333;}
 .padbot70 {padding-bottom:70px !important;}
 .padbot80 {padding-bottom:80px !important;}
 .padtop0 {padding-top:0 !important;}
+.padtop10 {padding-top:-10 !important;}
+.padtop20 {padding-top:-20 !important;}
 
 .overlay {
 	position:absolute;
