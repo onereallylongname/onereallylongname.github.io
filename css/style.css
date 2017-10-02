@@ -283,6 +283,7 @@ header {
 	position:fixed;
 	z-index:9999;
 	height:80px;
+	width:80px;
 }
 
 .navmenu ul li {
