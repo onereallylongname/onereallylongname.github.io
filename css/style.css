@@ -284,6 +284,8 @@ header {
 	z-index:9999;
 	height:80px;
 	width:80px;
+	max-width:80px;
+	max-height:80px;
 }
 
 .navmenu ul li {
