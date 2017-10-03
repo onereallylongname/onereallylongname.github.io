@@ -30,7 +30,7 @@ body {
 #page {overflow-x:hidden; position:relative; z-index:5;}
 
 .preloader_hide {opacity:0;}
-#preloader {position:fixed; left:50%; top:50%; width:128px; height:128px; margin:-16px 0 0 -16px; display:block;}
+#preloader {position:fixed; left:40%; top:40%; width:20%; height:auto; margin:-16px 0 0 -16px; display:block;}
 
 section {background-color:#fff;}
 
@@ -282,10 +282,8 @@ header {
 #menu_logo_block {
 	position:fixed;
 	z-index:9999;
-	height:80px;
-	width:80px;
-	max-width:80px;
-	max-height:80px;
+	top:5px;
+	max-height:70px;
 }
 
 .navmenu ul li {
