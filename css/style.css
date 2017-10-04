@@ -282,8 +282,8 @@ header {
 #menu_logo_block {
 	position:fixed;
 	z-index:9999;
-	top:5px;
-	max-height:70px;
+	top:2px;
+	max-height:56px;
 }
 
 .navmenu ul li {
@@ -1858,7 +1858,7 @@ input[type="color"]:focus {
 	a.menu_toggler {display:inline-block; float:right; margin: 20px 0 0 20px; width:40px; height:40px; text-align:center; line-height:38px; font-size:23px; color:#fff; background-color:#333;}
 	a.menu_toggler:hover {background-color:#333;}
 
-	.navmenu {position:absolute; left:0; right:0; top:80px; background-color:#fff;}
+	.navmenu {position:absolute; left:0; right:0; top:60px; background-color:#fff;}
 	.navmenu ul {padding:10px 0;}
 	.navmenu ul li {display:block; text-align:left;}
 	.navmenu ul li a {padding:4px 20px;}
