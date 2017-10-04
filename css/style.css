@@ -644,7 +644,7 @@ header {
 	transform: translateY(-100%);
 }
 
-.purpose_block .ipad_img1 {margin-top:0px; padding-bottom: 20px} //-116
+.purpose_block .ipad_img1 {margin-top:-116;} //-116
 
 
 
