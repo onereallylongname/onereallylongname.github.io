@@ -546,12 +546,12 @@ header {
 	transition: transform 0.2s ease-in-out;
 	-webkit-transition: -webkit-transform 0.2s ease-in-out;
 }
-.cleancode_block .nav-tabs li a.i1 i {background-image:url(../images/i1.png);}
-.cleancode_block .nav-tabs li a.i2 i {background-image:url(../images/i2.png);}
-.cleancode_block .nav-tabs li a.i3 i {background-image:url(../images/i3.png);}
-.cleancode_block .nav-tabs li a.i4 i {background-image:url(../images/i4.png);}
-.cleancode_block .nav-tabs li a.i5 i {background-image:url(../images/i5.png);}
-.cleancode_block .nav-tabs li a.i6 i {background-image:url(../images/i6.png);}
+.cleancode_block .nav-tabs li a.i1 i {background-image:url(../images/display_icons/i1.png);}
+.cleancode_block .nav-tabs li a.i2 i {background-image:url(../images/display_icons/i2.png);}
+.cleancode_block .nav-tabs li a.i3 i {background-image:url(../images/display_icons/i3.png);}
+.cleancode_block .nav-tabs li a.i4 i {background-image:url(../images/display_icons/i4.png);}
+.cleancode_block .nav-tabs li a.i5 i {background-image:url(../images/display_icons/i5.png);}
+.cleancode_block .nav-tabs li a.i6 i {background-image:url(../images/display_icons/i6.png);}
 
 .nav-tabs li a:hover,
 .nav-tabs li a:focus {
