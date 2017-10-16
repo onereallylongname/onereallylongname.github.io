@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+                  <html>
+                  <head>
+                  <style>  #content {
+                    height: 95%
+                    width: 100%;
+                  }
+                  #sidebar {
+                      background-color: #ff9933;
+                      position: fixed;
+                      top: 0;
+                      bottom: 0;
+                      left: 0;
+                      right: 235px;
+                      width: 235px;
+                      padding-top: 8px;
+                      padding-left: 25px;
+                      overflow-y: scroll;
+                      height: 92%
+                  }
+                  #main {
+                      margin-left: 350px;
+
+                  }
+                  #title {
+                      position: relative;
+                      opacity: 1;
+                      top: 0;
+                      padding-left: 50px;
+                      padding-right: 50%;
+
+                  }
+                  #main1 {
+                      position: relative;
+                      margin-left: 20px;
+                  }
+                  footer {
+                      background: #ff9933;
+                      position:fixed;
+                      left: 0;
+                      padding-left: 0;
+                      bottom:0px;
+                      height: 7.1%;
+                      width:260px;
+                      text-align: center;
+                  }
+                  ::-webkit-scrollbar {
+                      width: 5px;
+                  }
+                  a:link {
+                      text-decoration: none;
+                  }
+                  a:link, a:visited {
+                      color: white;
+                      text-decoration: none;
+                      cursor: auto;
+                  }
+                  a:link:active, a:visited:active {
+                      color: black;
+                      text-decoration: none;
+                  }
+                  </style>
+                  </head><body> <div id="content"> <div id="sidebar"> <h2 style="color:white"> Contents </h2><a href="#aurl"> Avaliable url </a> <br><a href="#espapn_valve"><br>ESPAPN_VALVE</h4> <br> </a><a href="#------globalvars------"><br>------GlobalVars------</h4> <br> </a><a href="#------helperfunctions------"><br>------HelperFunctions------</h4> <br> </a><a href="#autorunroutine">AutoRunRoutine</h4> <br> </a><a href="#batteryval">BatteryVal</h4> <br> </a><a href="#checkdir">CheckDir</h4> <br> </a><a href="#configexistindir">ConfigExistInDir</h4> <br> </a><a href="#formatbytes">FormatBytes</h4> <br> </a><a href="#getcontenttype">GetContentType</h4> <br> </a><a href="#irrigate">Irrigate</h4> <br> </a><a href="#readwaterflow">ReadWaterFlow</h4> <br> </a><a href="#switchledgreen">SwitchLedGreen</h4> <br> </a><a href="#displayled">DisplayLed</h4> <br> </a><a href="#serverclient">ServerClient</h4> <br> </a><a href="#setleddispinfo">SetLedDispInfo</h4> <br> </a><a href="#sleepfor">SleepFor</h4> <br> </a><a href="#startapinfofromconfig">StartAPInfoFromConfig</h4> <br> </a><a href="#startservererrorfromconfig">StartServerErrorFromConfig</h4> <br> </a><a href="#startserverfieldfromconfig">StartServerFieldFromConfig</h4> <br> </a><a href="#startserveripfromconfig">StartServerIPFromConfig</h4> <br> </a><a href="#validnetworks">ValidNetworks</h4> <br> </a><a href="#------errorandmessagedisplay------"><br>------ErrorandMessageDisplay------</h4> <br> </a><a href="#addtoerror">AddToError</h4> <br> </a><a href="#sayhello0">SayHello0</h4> <br> </a><a href="#------serverfunctions------"><br>------ServerFunctions------</h4> <br> </a><a href="#configrun">Configrun</h4> <br> </a><a href="#configmasterip">ConfigMasterIP</h4> <br> </a><a href="#configwifi">Configwifi</h4> <br> </a><a href="#connecttoweb">ConnectToWeb</h4> <br> </a><a href="#disconnectwifi">DisconnectWifi</h4> <br> </a><a href="#disperrors">DispErrors</h4> <br> </a><a href="#disperrorclear">DispErrorClear</h4> <br> </a><a href="#scannvalid">ScannValid</h4> <br> </a><a href="#findnetworks">FindNetworks</h4> <br> </a><a href="#handlefilelist">HandleFileList</h4> <br> </a><a href="#handlefileread">HandleFileRead</h4> <br> </a><a href="#handleroot">HandleRoot</h4> <br> </a><a href="#serverblink">ServerBlink</h4> <br> </a><a href="#serverglobalconfig">ServerGlobalConfig</h4> <br> </a><a href="#serverhelp">ServerHelp</h4> <br> </a><a href="#setdebug">SetDebug</h4> <br> </a><a href="#setirrigation">SetIrrigation</h4> <br> </a><a href="#------setupfunctions------"><br>------SetupFunctions------</h4> <br> </a><a href="#setupandstartwifi">SetUpAndStartWiFi</h4> <br> </a><a href="#setupio">SetUpIO</h4> <br> </a><a href="#setupserialfordebug">SetUpSerialForDebug</h4> <br> </a><a href="#setupfilesystem">SetUpFileSystem</h4> <br> </a><a href="#setupserveron">SetUpServerOn</h4> <br> </a><a href="#------arduinosetupandloop------"><br>------Arduinosetupandloop------</h4> <br> </a><a href="#setup">Setup</h4> <br> </a><a href="#loop">Loop</h4> <br> </a><br> <br></div> <div id="main"> <div class="container" id="title"> <h1 style="color: #ff9933"> Code functions </h1> <font color="#ff9933"> (Version: 2017-04-14 11:02:14 +0100) </font> </div> <div class="container" id="main1"> <br> <a name="aurl" <h3 style="color: #ff9933"> Avaliable url: </h3> </a> <br> <a href="#handleroot" style="color: #990000" >"/"</a> ; <a href="#serverblink" style="color: #990000" >"/blink"</a> ; <a href="#serverglobalconfig" style="color: #990000" >"/globalconfig"</a> ; <a href="#configmasterip" style="color: #990000" >"/configmasterip"</a> ; <a href="#configwifi" style="color: #990000" >"/configwifi"</a> ; <a href="#disperrors" style="color: #990000" >"/errors"</a> ; <a href="#disperrorclear" style="color: #990000" >"/error/clear"</a> ; <a href="#handlefilelist" style="color: #990000" >"/list"</a> ; <a href="#setirrigation" style="color: #990000" >"/rega"</a> ; <a href="#scannvalid" style="color: #990000" >"/scannValid"</a> ; <br><a href="#findnetworks" style="color: #990000" >-</a> ; <a href="#disconnectwifi" style="color: #990000" >-</a> ; <a href="#serverhelp" style="color: #990000" >-</a> ; <a href="#setdebug" style="color: #990000" >-</a> ; <a href="#connecttoweb" style="color: #990000" >-</a> ; <a href="#configrun" style="color: #990000" >-</a> ; <br><p> <a name="espapn_valve"> <p style="color: #ff9933"> <font size="4">						ESPapn_valve</font> </p><font color="#ff9933">dscr:</font>Final valve code. This code controls valves.<br></p><br><p> <a name="------globalvars------"> <p style="color: #ff9933"> <font size="4">						------ Global Vars ------</font> </p><font color="#b3bfcc">/* Esp first number id. */
+</font> <br>char ESPNUM0 = 0;
+<br>char ESPNUM1 = 9;
+<br>int  ESPNUM = 9;
+<br>
+<br>//Code name
+<br>#define CODENAME ESPapn_final_valve
+<br>
+<br><font color="#b3bfcc">/* --- Define IO --- */
+</font> <br>// RTC
+<br>//#define SCL_RTC 5  // D1
+<br>//#define SDA_RTC 4  // D2
+<br>// IO
+<br>#define FLWMTR 4   // D2
+<br>#define VONOFF 12  // D6
+<br>#define SWITCH 13  // D7
+<br>#define LED_GN 15  // D8
+<br>// Valv control (H bridge)
+<br>#define ENABLE 2  // D4
+<br>#define OPENVL 0  // D3
+<br>
+<br>// CH-PD
+<br>#define SLEEPIO 16 // D0
+<br>
+<br><font color="#b3bfcc">/* Esp credentials. */
+</font> <br>//char *ssid = "espap00_valve_nnn";
+<br>//char *password = "xxxxxxxxxxxxxx";
+<br>
+<br><font color="#b3bfcc">/* Update network. */
+</font> <br>IPAddress ip(192, 168, ESPNUM, 1);
+<br>IPAddress gateway(192, 168, 0, 1);
+<br>IPAddress subnet(255, 255, 255, 0);
+<br>
+<br><font color="#b3bfcc">/* Web server var*/
+</font> <br>ESP8266WebServer server(80);
+<br>
+<br><font color="#b3bfcc">/* File obj to hold the current upload. */
+</font> <br>//File fsUploadFile;
+<br>
+<br><font color="#b3bfcc">/* Set Serial Print Debug on and off. Debug lv. 0..4. 0 - no debug; 4 - debug all*/
+</font> <br>unsigned int DEBUG = 4;
+<br>//if DEBUG_CODE_VERSION is not define the debug code is vaporized from the code
+<br>// #define DEBUG_CODE_VERSION 
+<br>
+<br><font color="#b3bfcc">/* Define baudrate*/
+</font> <br>#define BaudRate 115200
+<br>
+<br><font color="#b3bfcc">/*Flags*/
+</font> <br>#define MAX_ERROR_SIZE 8
+<br>float dispInfoLed = 0.5;
+<br>unsigned int activeError[MAX_ERROR_SIZE] = { 0,0,0,0,0,0,0,0 };
+<br>const char errorArray[MAX_ERROR_SIZE][20] = { { "00000000000000" },{ "AP - start fail" },{ "STA - web fail" },{ "Server - no answer" },{ "Esp - bad url" },{ "Field - bad name" },{ "Time - bad format" },{ "Sensor - fail" } };
+<br>
+<br><font color="#b3bfcc">/* Other */
+</font> <br>bool pressed = false;
+<br>unsigned int cooldown = 0;
+<br>unsigned int mainLoopT = 0;
+<br>unsigned int mainLoopTimeOut = 0;
+<br>uint8 irrigationON = LOW;
+<br>uint8 ledOnOffState = LOW;
+<br>float water = 0;
+<br>
+<br></p><br><p> <a name="------helperfunctions------"> <p style="color: #ff9933"> <font size="4">						------ Helper Functions ------</font> </p>
+<br><br><p> <a name="autorunroutine"> <p style="color: #ff9933"> <font size="4">            AutoRunRoutine</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: bool <br><font color="#ff9933">dscr:</font>: Automatic routine. <br></p><br><p> <a name="batteryval"> <p style="color: #ff9933"> <font size="4">            BatteryVal</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>int<br><font color="#ff9933">dscr:</font>Reads all the names and the size of all files in the flash memory.<br></p><br><p> <a name="checkdir"> <p style="color: #ff9933"> <font size="4">						CheckDir</font> </p><font color="#ff9933">args:</font>(String dirStr)<br><font color="#ff9933">rtrn:</font>String<br><font color="#ff9933">dscr:</font>Reads all the names and the size of all files in the flash memory.<br></p><br><p> <a name="configexistindir"> <p style="color: #ff9933"> <font size="4">						ConfigExistInDir</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>bool<br><font color="#ff9933">dscr:</font>Verifies if config.txt exists.<br></p><br><p> <a name="formatbytes"> <p style="color: #ff9933"> <font size="4">						FormatBytes</font> </p><font color="#ff9933">args:</font>(size_t bytes)<br><font color="#ff9933">rtrn:</font>String<br><font color="#ff9933">dscr:</font>Converts bytes in B, KB, MB, GB.<br></p><br><p> <a name="getcontenttype"> <p style="color: #ff9933"> <font size="4">						GetContentType</font> </p><font color="#ff9933">args:</font>(String filename)<br><font color="#ff9933">rtrn:</font>String<br><font color="#ff9933">dscr:</font>Verifies the file extension<br></p><br><p> <a name="irrigate"> <p style="color: #ff9933"> <font size="4">						Irrigate</font> </p><font color="#ff9933">args:</font> (uint8 onOff)<br><font color="#ff9933">rtrn:</font> bool <br><font color="#ff9933">dscr:</font> Opens and closes valve<br></p><br><p> <a name="readwaterflow"> <p style="color: #ff9933"> <font size="4">            ReadWaterFlow</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: float q <br><font color="#ff9933">dscr:</font>: Read flowmeter.<br></p><br><p> <a name="switchledgreen"> <p style="color: #ff9933"> <font size="4">            SwitchLedGreen</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Switch the green led state.<br></p><br><p> <a name="displayled"> <p style="color: #ff9933"> <font size="4">            DisplayLed</font> </p><font color="#ff9933">args:</font>: (unsigned int errorNumber)<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: errorNumber defines the time of the blink in seconds.<br>  0 - no blink;
+<br></p><br><p> <a name="serverclient"> <p style="color: #ff9933"> <font size="4">            ServerClient</font> </p><font color="#ff9933">args:</font>(String request)<br><font color="#ff9933">rtrn:</font>String<br><font color="#ff9933">dscr:</font><br></p><br><p> <a name="setleddispinfo"> <p style="color: #ff9933"> <font size="4">            SetLedDispInfo</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Sets dispInfoLed, warning led's frequency.<br></p><br><p> <a name="sleepfor"> <p style="color: #ff9933"> <font size="4">            SleepFor</font> </p><font color="#ff9933">args:</font>(const long int sleepTime)<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Forces deepSleep.<br></p><br><p> <a name="startapinfofromconfig"> <p style="color: #ff9933"> <font size="4">            StartAPInfoFromConfig</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>bool<br><font color="#ff9933">dscr:</font>Checks is config.txt exists in dir and if it's content is valid. If the content<br>is valid changes AP's ssid and pass.
+<br></p><br><p> <a name="startservererrorfromconfig"> <p style="color: #ff9933"> <font size="4">            StartServerErrorFromConfig</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>bool<br><font color="#ff9933">dscr:</font>Checks if field.txt exists in dir and if it's content is valid.<br>
+<br></p><br><p> <a name="startserverfieldfromconfig"> <p style="color: #ff9933"> <font size="4">            StartServerFieldFromConfig</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>bool<br><font color="#ff9933">dscr:</font>Checks if field.txt exists in dir and if it's content is valid.<br>
+<br></p><br><p> <a name="startserveripfromconfig"> <p style="color: #ff9933"> <font size="4">            StartServerIPFromConfig</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>bool<br><font color="#ff9933">dscr:</font>Checks if serverName.txt exists in dir and if it's content is valid.<br>
+<br></p><br><p> <a name="validnetworks"> <p style="color: #ff9933"> <font size="4">            ValidNetworks</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>String<br><font color="#ff9933">dscr:</font>Looks for MasterFieldWiFi.<br></p><br><p> <a name="------errorandmessagedisplay------"> <p style="color: #ff9933"> <font size="4">            ------ Error and Message Display ------</font> </p>
+<br><br><p> <a name="addtoerror"> <p style="color: #ff9933"> <font size="4">            AddToError</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Stores errors in flash memory an in memory.<br></p><br><p> <a name="sayhello0"> <p style="color: #ff9933"> <font size="4">            SayHello0</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Show chip starting by blinking LED's<br>Used in SetUpIO
+<br></p><br><p> <a name="------serverfunctions------"> <p style="color: #ff9933"> <font size="4">						------ Server Functions ------</font> </p>
+<br>#if 0
+<br><br><p> <a name="configrun"> <p style="color: #ff9933"> <font size="4">						Configrun</font> </p><font color="#ff9933">args:</font> ()<br><font color="#ff9933">rtrn:</font> void <br><font color="#ff9933">dscr:</font> Used for: server.on "/configwifi?run=STATE".<br>Writes to running.txt the new configuration.
+<br>STATE can be: debug; field; noton.
+<br></p><br><p> <a name="configmasterip"> <p style="color: #ff9933"> <font size="4">            ConfigMasterIP</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Used for: server.on "/configmasterip?ip=IP".<br>Writes to running.txt the new configuration.
+<br>STATE can be: debug; field; noton.
+<br></p><br><p> <a name="configwifi"> <p style="color: #ff9933"> <font size="4">						Configwifi</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>bool<br><font color="#ff9933">dscr:</font> Used for: server.on "/configwifi?ssid=SSID&pass=PASS".<br>Writes to config.txt the new configuration.
+<br>PASS has to be 14 char long.
+<br>SSID has to be 16 char long.
+<br></p><br><p> <a name="connecttoweb"> <p style="color: #ff9933"> <font size="4">            ConnectToWeb</font> </p><font color="#ff9933">args:</font><br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Find and connect to wifi. ssid is 'MasterFieldWiFi' and pass is "12345678"<br></p><br><p> <a name="disconnectwifi"> <p style="color: #ff9933"> <font size="4">            DisconnectWifi</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Used for: server.on "/disconnect".<br>Disconnects STA WiFi connection if there is one.
+<br></p><br><p> <a name="disperrors"> <p style="color: #ff9933"> <font size="4">            DispErrors</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Displays errors in sensor.<br></p><br><p> <a name="disperrorclear"> <p style="color: #ff9933"> <font size="4">            DispErrorClear</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Clears errors.<br></p><br><p> <a name="scannvalid"> <p style="color: #ff9933"> <font size="4">            ScannValid</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Scaan for valid esp ssid.<br></p><br><p> <a name="findnetworks"> <p style="color: #ff9933"> <font size="4">						FindNetworks</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Used for: server.on "/scannetworks".<br>Displays all ssid's avaliable and signal strength.
+<br></p><br><p> <a name="handlefilelist"> <p style="color: #ff9933"> <font size="4">						HandleFileList</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Used for: server.on "/list?dir=DIR".<br>Displays all files avaliable in DIR.
+<br></p><br><p> <a name="handlefileread"> <p style="color: #ff9933"> <font size="4">						HandleFileRead</font> </p><font color="#ff9933">args:</font>(String path)<br><font color="#ff9933">rtrn:</font>bool<br><font color="#ff9933">dscr:</font>Checks if file exists in path. If it exists reads and streams it.<br></p><br><p> <a name="handleroot"> <p style="color: #ff9933"> <font size="4">            HandleRoot</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Verifies that you are connected to the esp.<br></p><br><p> <a name="serverblink"> <p style="color: #ff9933"> <font size="4">            ServerBlink</font> </p><font color="#ff9933">args:</font>: ()<br><font color="#ff9933">rtrn:</font>: void <br><font color="#ff9933">dscr:</font>: Forces the LED to light up for 5 seconds.<br></p><br><p> <a name="serverglobalconfig"> <p style="color: #ff9933"> <font size="4">            ServerGlobalConfig</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Used for: server.on "/globalconfig".<br>On query "/globalconfig?lat=LAT&lon=LON&field=FIELD" esp is confugured with.
+<br>If no query is made a web page is raised to easily configure the esp.
+<br></p><br><p> <a name="serverhelp"> <p style="color: #ff9933"> <font size="4">						ServerHelp</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Used for: server.on "/help".<br>Displays this page's link.
+<br></p><br><p> <a name="setdebug"> <p style="color: #ff9933"> <font size="4">						SetDebug</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Used for: server.on "/debug?dbg=DEBUG".<br>Changes DEBUG valeu (0 < DEBUG < 4). The default is 1.
+<br></p><br><p> <a name="setirrigation"> <p style="color: #ff9933"> <font size="4">            SetIrrigation</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Used for: server.on "/rega?val=VAL".<br>Changes VAL valeu (on or off) to set irrigation.
+<br></p><br><p> <a name="------setupfunctions------"> <p style="color: #ff9933"> <font size="4">						------ Setup Functions ------</font> </p>
+<br><br><p> <a name="setupandstartwifi"> <p style="color: #ff9933"> <font size="4">						SetUpAndStartWiFi</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Start WiFi.<br></p><br><p> <a name="setupio"> <p style="color: #ff9933"> <font size="4">						SetUpIO</font> </p>	args:()
+<br><font color="#ff9933">rtrn:</font> void <br><font color="#ff9933">dscr:</font> Srart IO as read or write<br></p><br><p> <a name="setupserialfordebug"> <p style="color: #ff9933"> <font size="4">						SetUpSerialForDebug</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Start serial if debug is on (0 < DEBUG < 4)<br></p><br><p> <a name="setupfilesystem"> <p style="color: #ff9933"> <font size="4">						SetUpFileSystem</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Start FileSistem<br></p><br><p> <a name="setupserveron"> <p style="color: #ff9933"> <font size="4">						SetUpServerOn</font> </p><font color="#ff9933">args:</font>()<br><font color="#ff9933">rtrn:</font>void<br><font color="#ff9933">dscr:</font>Setup Server interrupts<br></p><br><p> <a name="------arduinosetupandloop------"> <p style="color: #ff9933"> <font size="4">						------ Arduino setup and loop  ------</font> </p>
+<br><br><p> <a name="setup"> <p style="color: #ff9933"> <font size="4">						Setup</font> </p>Setup arduino:
+<br><font color="#ff9933">dscr:</font>Start file system.<br>Check if config.txt exists and is valid.
+<br>Start WiFi AP & STA. AP's ssid and pass are read from config.txt if the file is valid
+<br><font color="#b3bfcc">    ***************************************************************************/
+</font> <br>void setup()
+<br>{
+<br><font color="#b3bfcc">	/*Setup IO*/
+</font> <br>	setUpIO();
+<br>  digitalWrite(ENABLE, HIGH);
+<br>  
+<br><font color="#b3bfcc">  /*Chip Setup end*/
+</font> <br>  sayHello0();
+<br>
+<br><font color="#b3bfcc">	/*Setup Serial for Debug*/
+</font> <br>	setUpSerialForDebug();
+<br>
+<br><font color="#b3bfcc">	/*File system*/
+</font> <br>	setUpFileSystem();
+<br>
+<br><font color="#b3bfcc">	/*Fun��o para o debug dos ficheiros*/
+</font> <br>	if (DEBUG) checkDir("/");
+<br>
+<br><font color="#b3bfcc">	/*Iniciar ssid e password com informa��o do ficheiro de configura��o*/
+</font> <br>	startAPInfoFromConfig();
+<br>
+<br><font color="#b3bfcc">  /*Configurar o ip do servidor com recurso ao ficheiro de configuração*/
+</font> <br>  startServerIPFromConfig();
+<br>
+<br><font color="#b3bfcc">  /*Configurar o nome do terreno com recurso ao ficheiro de configuração*/
+</font> <br>  startServerFieldFromConfig();
+<br>
+<br><font color="#b3bfcc">  /*Actualizar quais os erros activos com recurso ao ficheiro de configuração*/
+</font> <br>  startServerErrorFromConfig();
+<br>
+<br><font color="#b3bfcc">	/*Start WiFi*/
+</font> <br>	setUpAndStartWiFi();
+<br>
+<br><font color="#b3bfcc">	/*Setup server*/
+</font> <br>	setUpServerOn();
+<br>
+<br>	server.begin();
+<br>
+<br>	PrintDegug("\n>>HTTP server started...\n", 1);
+<br>
+<br><font color="#b3bfcc">  /*Chip Setup end*/
+</font> <br>  sayHello0();
+<br>  mainLoopT = millis();
+<br>}
+<br>
+<br></p><br><p> <a name="loop"> <p style="color: #ff9933"> <font size="4">						Loop</font> </p><font color="#ff9933">dscr:</font>Main loop in arduino<br><font color="#b3bfcc">   ***************************************************************************/
+</font> <br>void loop()
+<br>{
+<br>  server.handleClient();
+<br>  // Set warning Ligth
+<br>  setLedDispInfo();
+<br>  displayLed();
+<br><font color="#b3bfcc">	/* Modo manual */
+</font> <br>	if (digitalRead(SWITCH))
+<br>	{
+<br>		if (!cooldown)
+<br>		{
+<br>			if (digitalRead(VONOFF))
+<br>			{
+<br>				//PrintDegug("<- Button Down\n", 3);
+<br>				if (!pressed)
+<br>				{
+<br>					pressed = true;
+<br>				}
+<br>			}
+<br>			else if (pressed && !digitalRead(VONOFF))
+<br>			{
+<br>				irrigate(!irrigationON);
+<br>				pressed = false;
+<br>				cooldown = 25000;
+<br>				PrintDegug(String(millis()) + "\n-- -- -- -- -- -- -- --\n ", 0);
+<br>			}
+<br>		}
+<br>		else
+<br>			if (cooldown > 0)
+<br>				cooldown--;
+<br>	}
+<br><font color="#b3bfcc">	/* Modo automatico */
+</font> <br>	else
+<br>	{
+<br>    if(millis() > mainLoopTimeOut && connectToWeb()){
+<br>      readWaterFlow();
+<br>      autoRunRoutine();
+<br>    }
+<br>	}
+<br>}
+<br></p><br> <font color="#ff9933"> - - - - - "" - - - - - </font> <br> </div> </div> </div> <footer> <p>Code By: AA @ <a href="mailto:antonioalmeida2099@gmail.com"> mail me </a></p></footer> </body> </html>
