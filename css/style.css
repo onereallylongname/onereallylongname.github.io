@@ -2042,3 +2042,11 @@ input[type="color"]:focus {
 	.col-ss-1 {width: 8.333333333333332%;}
 
 }
+
+/* My changes */
+.sidepanel .fa {
+  color: black;
+}
+.fa {
+  color: white;
+}
