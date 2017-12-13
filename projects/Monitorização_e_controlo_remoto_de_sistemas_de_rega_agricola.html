@@ -37,6 +37,7 @@
 	<script src="../js/owl.carousel.js"></script>
 	<script src="../js/animate.js" type="text/javascript"></script>
 	<script src="../js/myscript.js" type="text/javascript"></script>
+	<script src="../js/project_importer.js" type="text/javascript"></script>
 	<script>
 		//PrettyPhoto
 		jQuery(document).ready(function() {
@@ -155,14 +156,8 @@
 
 									<!-- PORTFOLIO SLIDER -->
 									<div class="flexslider portfolio_single_slider">
-										<ul class="slides">
-											<li><img src="../images/projects/mcrsra_0.png" alt="" /></li>
-											<li><img src="../images/projects/mcrsra_1.png" alt="" /></li>
-											<li><img src="../images/projects/mcrsra_2.png" alt="" /></li>
-											<li><img src="../images/projects/mcrsra_3.png" alt="" /></li>
-											<li><img src="../images/projects/mcrsra_4.png" alt="" /></li>
-											<li><img src="../images/projects/mcrsra_5.png" alt="" /></li>
-											<li><img src="../images/projects/mcrsra_6.png" alt="" /></li>
+										<ul id="pictureul" class="slides">
+
 										</ul>
 									</div>
 									<!-- //PORTFOLIO SLIDER -->
@@ -273,6 +268,9 @@
 		<!-- //FOOTER -->
 
 	</div>
+	<script type="text/javascript">
+		load_pictures("../images/projects/mcrsra/mcrsra_", ".png",  6);
+	</script>
 </body>
 
 </html>
