@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stark Tools – Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/avro.css" />
+    <link rel="stylesheet" href="css/notifications.css" />
+    <link rel="icon" type="image/png" href="images/icon.png" />
+  </head>
+
+  <body class="app-shell">
+    <header>
+      <div class="header">
+        <img src="images/icon.png" alt="" width="30" height="30" />
+        Avro Editor
+        <span class="footer-version">v0.1.0</span>
+      </div>
+      <div class="search-wrapper">
+        <input
+          id="sideSearchInput"
+          type="text"
+          placeholder="🔍 Search fields, types..."
+          title="[ctrl+shift+f] or /"
+          autocomplete="off"
+        />
+        <span id="searchMatchCounter" class="match-counter hidden">[0/0]</span>
+        <div id="searchHistory" class="search-history hidden"></div>
+      </div>
+
+      <div class="header">
+        <a class="themeButton" title="Go back to main page" href="">🏠</a>
+        <!-- Theme picker dropdown -->
+        <select id="theme-picker" class="themeButton"></select>
+        <button
+          id="conceptsBtn"
+          class="themeButton header-btn"
+          title="Show topic schema"
+        >
+          ❔
+        </button>
+      </div>
+    </header>
+    <div id="toast">Toast!</div>
+
+    <!-- COLLAPSIBLE CONCEPT PANEL (overlay) -->
+    <section id="conceptPanel" class="concepts hidden">
+      <h2>Keyboard Shortcuts</h2>
+      <h3>Navigation</h3>
+      <ul>
+        <li><strong>↑/↓</strong> or <strong>j/k</strong> — move focus</li>
+        <li><strong>←/→</strong> or <strong>h/l</strong> — collapse/expand</li>
+        <li><strong>Home/g</strong> — first node</li>
+        <li><strong>End/G</strong> — last node</li>
+        <li><strong>Space</strong> — toggle expand</li>
+        <li><strong>Enter</strong> — open details for editing</li>
+      </ul>
+      <h3>Actions</h3>
+      <ul>
+        <li><strong>a</strong> — add sibling field</li>
+        <li><strong>d</strong> / <strong>Delete</strong> — remove node</li>
+        <li><strong>c</strong> — copy node</li>
+        <li><strong>m</strong> — move field (target picker)</li>
+        <li><strong>r</strong> — replace type (focus type select)</li>
+        <li><strong>F2</strong> — rename (focus name input)</li>
+        <li><strong>u</strong> — undo</li>
+        <li><strong>Ctrl+R</strong> — redo</li>
+      </ul>
+      <h3>Search</h3>
+      <ul>
+        <li>
+          <strong>/</strong> or <strong>Ctrl+Shift+F</strong> — focus search
+        </li>
+        <li><strong>n/N</strong> — next/prev match</li>
+        <li><strong>Esc</strong> — clear search / cancel move</li>
+        <li>
+          Prefix <strong>n:</strong> name, <strong>t:</strong> type,
+          <strong>p:</strong> parent, <strong>ns:</strong> namespace
+        </li>
+      </ul>
+      <h3>File Operations</h3>
+      <ul>
+        <li><strong>Ctrl+?</strong> — toggle this help panel</li>
+        <li><strong>Ctrl+Z</strong> — undo</li>
+        <li><strong>Ctrl+Shift+Z</strong> — redo</li>
+        <li><strong>Ctrl+Shift+O</strong> — open file</li>
+        <li><strong>Ctrl+Shift+J</strong> — toggle JSON editor</li>
+        <li><strong>Ctrl+Shift+C</strong> — copy schema to clipboard</li>
+        <li><strong>Ctrl+Shift+E</strong> — export .avsc file</li>
+      </ul>
+    </section>
+
+    <!-- Main content area: Tree + Detail Panel -->
+    <main class="app-main">
+      <div class="schema-layout">
+        <!-- Permanent Side Panel -->
+        <div id="sidePanel" class="side-panel">
+          <div id="detailsMode" class="mode-content">
+            <div id="sidePanelDetails" class="card side-details">
+              <div class="side-placeholder">Select a node to see details</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="schemaDisplay" class="card hidden">
+          <div id="schemaTree"></div>
+        </div>
+      </div>
+
+      <div id="schemaLoadError" class="error hidden"></div>
+      <textarea
+        id="jsonInputArea"
+        class="json-area hidden"
+        placeholder="Paste Avro schema JSON here"
+      ></textarea>
+    </main>
+
+    <!-- Footer: Load / Export / Undo-Redo -->
+    <footer class="app-footer">
+      <div class="footer-group">
+        <input type="file" id="avscFileInput" accept=".avsc,application/json" />
+        <button id="jsonToggleBtn" class="btn toggle-btn">JSON</button>
+        <button id="newAvscBtn" class="btn">New</button>
+      </div>
+      <div class="footer-group">
+        <button id="exportClipboardBtn" class="btn">Copy</button>
+        <button id="exportFileBtn" class="btn">Export</button>
+      </div>
+      <div id="undoRedoControls" class="footer-group undo-redo-controls">
+        <button id="undoBtn" class="themeButton" title="Undo (Ctrl+Z)">
+          ↶
+        </button>
+        <span id="historyIndex" class="history-index"></span>
+        <button id="redoBtn" class="themeButton" title="Redo (Ctrl+Shift+Z)">
+          ↷
+        </button>
+      </div>
+    </footer>
+
+    <script src="js/undo.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/strings.js"></script>
+    <script src="js/avro/utils.js"></script>
+    <script src="js/avro/validate.js"></script>
+    <script src="js/avro/io.js"></script>
+    <script src="js/avro/projection.js"></script>
+    <script src="js/avro/actions.js"></script>
+    <script src="js/avro/search.js"></script>
+    <script src="js/avro/render.js"></script>
+    <script src="js/avro/avro.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/menu.js"></script>
+  </body>
+</html>

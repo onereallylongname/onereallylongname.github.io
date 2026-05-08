@@ -1,0 +1,226 @@
+{
+  "type": "record",
+  "name": "AllTypesRoot",
+  "namespace": "com.example.avro.alltypes.v1",
+  "doc": "Schema covering all Avro primitive and complex types, including nested unions and logical types",
+  "fields": [
+    {
+      "name": "p_null",
+      "type": "null"
+    },
+    {
+      "name": "p_boolean",
+      "type": "boolean"
+    },
+    {
+      "name": "p_int",
+      "type": "int"
+    },
+    {
+      "name": "p_long",
+      "type": "long"
+    },
+    {
+      "name": "p_float",
+      "type": "float"
+    },
+    {
+      "name": "p_double",
+      "type": "double"
+    },
+    {
+      "name": "p_bytes",
+      "type": "bytes"
+    },
+    {
+      "name": "p_string",
+      "type": "string"
+    },
+    {
+      "name": "decimal_amount",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 18,
+        "scale": 4
+      }
+    },
+    {
+      "name": "event_date",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "event_time",
+      "type": {
+        "type": "int",
+        "logicalType": "time-millis"
+      }
+    },
+    {
+      "name": "event_timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "StatusEnum",
+        "symbols": [
+          "NEW",
+          "PROCESSING",
+          "COMPLETED",
+          "FAILED"
+        ]
+      }
+    },
+    {
+      "name": "fixed_hash",
+      "type": {
+        "type": "fixed",
+        "name": "Sha256Hash",
+        "size": 32
+      }
+    },
+    {
+      "name": "string_array",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "record_array",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "ArrayItemRecord",
+          "fields": [
+            {
+              "name": "id",
+              "type": "long"
+            },
+            {
+              "name": "created_at",
+              "type": {
+                "type": "long",
+                "logicalType": "timestamp-millis"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "metadata_map",
+      "type": {
+        "type": "map",
+        "values": "string"
+      }
+    },
+    {
+      "name": "complex_map",
+      "type": {
+        "type": "map",
+        "values": {
+          "type": "record",
+          "name": "MapValueRecord",
+          "fields": [
+            {
+              "name": "flag",
+              "type": "boolean"
+            },
+            {
+              "name": "amount",
+              "type": {
+                "type": "bytes",
+                "logicalType": "decimal",
+                "precision": 10,
+                "scale": 2
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "optional_string",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "nested_union",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "NestedUnionRecord",
+          "fields": [
+            {
+              "name": "union_enum",
+              "type": {
+                "type": "enum",
+                "name": "InnerEnum",
+                "symbols": [
+                  "A",
+                  "B",
+                  "C"
+                ]
+              }
+            },
+            {
+              "name": "union_value",
+              "type": [
+                {
+                  "type": "record",
+                  "name": "DeepNestedRecord",
+                  "fields": [
+                    {
+                      "name": "deep_date",
+                      "type": {
+                        "type": "int",
+                        "logicalType": "date"
+                      }
+                    },
+                    {
+                      "name": "deep_array",
+                      "type": {
+                        "type": "array",
+                        "items": {
+                          "type": "map",
+                          "values": "string"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "bytes",
+                  "logicalType": "decimal",
+                  "precision": 12,
+                  "scale": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "default": null
+    }
+  ],
+  "x-tags": [
+    "all-types",
+    "editor-test",
+    "roundtrip-safe"
+  ],
+  "x-version": 1
+}

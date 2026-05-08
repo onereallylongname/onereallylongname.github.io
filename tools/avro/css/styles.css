@@ -1,0 +1,166 @@
+/* ============================================================
+   LIGHT MODE (DEFAULT + MANUAL OVERRIDE)
+   ============================================================ */
+
+:root {
+  --bg: #f3f4f7;
+  --text: #333;
+  --text-light: #444;
+  --section-bg: #fff;
+  --chip-bg: #fff;
+  --border: rgba(0, 0, 0, 0.1);
+  --header-bg: #334;
+  --header-text: #fff;
+  --btn-bg: #445;
+  --btn-bg-hover: #556;
+}
+
+/* ============================================================
+   BASE STYLING (NOW USING THEME VARIABLES)
+   ============================================================ */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+body.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 0.75rem 1.5rem;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+div.header {
+  float: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Dark Mode Toggle Button and header buttons*/
+.themeButton {
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  background: var(--btn-bg);
+  color: var(--header-text);
+  border: 1px solid var(--border);
+  user-select: none;
+  transition: background 0.2s;
+}
+.themeButton:hover {
+  background: var(--btn-bg-hover);
+}
+
+.container {
+  margin: auto;
+  padding: 2rem;
+}
+
+.section {
+  background: var(--section-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 8px var(--border);
+  transition:
+    background 0.25s,
+    box-shadow 0.25s;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.col {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: var(--chip-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  background: var(--chip-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn {
+  padding: 0.6rem 1.1rem;
+  background: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: var(--btn-bg-hover);
+}
+
+.toggle-btn.active {
+  background: var(--btn-bg);
+  box-shadow: inset 0 0 0 2px var(--border);
+}
+
+/* --- Concepts Panel --- */
+.concepts {
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  right: 16px;
+  max-width: 600px;
+  padding: 1rem;
+  background: var(--section-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 900;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+}
+.hidden {
+  display: none;
+}

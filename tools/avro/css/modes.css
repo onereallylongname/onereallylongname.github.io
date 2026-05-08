@@ -1,0 +1,43 @@
+/* ============================================================
+   DARK MODE (AUTO VIA OS)
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light) {
+    --bg: #1e1e1e;
+    --text: #ddd;
+    --text-light: #ccc;
+    --section-bg: #2a2a2a;
+    --chip-bg: #2a2a2a;
+    --border: rgba(255, 255, 255, 0.15);
+    --header-bg: #111827;
+    --header-text: #fff;
+    --btn-bg: #374151;
+    --btn-bg-hover: #4b5563;
+  }
+}
+
+/* ============================================================
+   DARK MODE (MANUAL OVERRIDE)
+   ============================================================ */
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #ddd;
+  --text-light: #ccc;
+  --section-bg: #2a2a2a;
+  --chip-bg: #2a2a2a;
+  --border: rgba(255, 255, 255, 0.15);
+  --header-bg: #111827;
+  --header-text: #fff;
+  --btn-bg: #374151;
+  --btn-bg-hover: #4b5563;
+}
+
+/* ============================================================
+   LIGHT MODE (MANUAL OVERRIDE)
+   ============================================================ */
+
+body.light {
+  /* forces the LIGHT root variables even if OS is dark */
+}
