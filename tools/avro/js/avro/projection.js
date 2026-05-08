@@ -347,11 +347,10 @@ function emitFixed(node) {
 function emitPrimitive(node) {
   const native = node.attributes.native;
 
-  // plain primitive or named reference
-  if (typeof native === "string") return native;
-
-  // logical or annotated primitive
-  return { ...native };
+  // Emit exactly what's stored (preserve original format)
+  // - If it was a string ("int"), emit the string
+  // - If it was an object ({type: "int", logicalType: "date"}), emit the object
+  return native;
 }
 
 /* ============================
@@ -421,4 +420,33 @@ function assertAllPathsDefined(projection) {
       throw new Error(`Node ${node.id} has invalid path`);
     }
   }
+}
+
+/* ============================
+   SCHEMA STATS
+============================ */
+
+function calculateSchemaStats(projection) {
+  let fieldCount = 0;
+  let maxDepth = 0;
+
+  function getDepth(nodeId, depth = 0) {
+    maxDepth = Math.max(maxDepth, depth);
+    const node = projection.nodes.get(nodeId);
+    if (!node) return;
+
+    if (node.kind === "field") {
+      fieldCount++;
+    }
+
+    for (const childId of node.children) {
+      getDepth(childId, depth + 1);
+    }
+  }
+
+  if (projection.rootId) {
+    getDepth(projection.rootId);
+  }
+
+  return { fieldCount, maxDepth };
 }

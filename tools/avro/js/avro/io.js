@@ -150,7 +150,13 @@ function startIO(preApdateAction, posApdateAction) {
   document.getElementById("jsonInputArea").addEventListener("blur", () => {
     const text = document.getElementById("jsonInputArea").value.trim();
     if (text) {
-      loadSchemaFromText(text);
+      try {
+        if (preApdateAction) preApdateAction();
+        loadSchemaFromText(text);
+        if (posApdateAction) posApdateAction();
+      } catch (err) {
+        showSchemaError("Failed to parse JSON: " + err.message);
+      }
     }
   });
 

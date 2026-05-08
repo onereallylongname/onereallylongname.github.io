@@ -870,6 +870,7 @@ function focusNodeById(nodeId) {
     scrollFocusedIntoView();
     const node = currentProjection.nodes.get(nodeId);
     if (node) renderNodeDetails(node);
+    updateBreadcrumbs(nodeId);
   }
 }
 
@@ -885,7 +886,10 @@ function moveFocus(delta) {
   scrollFocusedIntoView();
   const nodeId = flatVisibleNodes[focusedIndex].id;
   const node = currentProjection.nodes.get(nodeId);
-  if (node) renderNodeDetails(node);
+  if (node) {
+    renderNodeDetails(node);
+    updateBreadcrumbs(nodeId);
+  }
 }
 
 function focusFirst() {
@@ -893,6 +897,12 @@ function focusFirst() {
   focusedIndex = 0;
   applyFocusHighlight();
   scrollFocusedIntoView();
+  const nodeId = flatVisibleNodes[focusedIndex].id;
+  const node = currentProjection.nodes.get(nodeId);
+  if (node) {
+    renderNodeDetails(node);
+    updateBreadcrumbs(nodeId);
+  }
 }
 
 function focusLast() {
@@ -900,6 +910,12 @@ function focusLast() {
   focusedIndex = flatVisibleNodes.length - 1;
   applyFocusHighlight();
   scrollFocusedIntoView();
+  const nodeId = flatVisibleNodes[focusedIndex].id;
+  const node = currentProjection.nodes.get(nodeId);
+  if (node) {
+    renderNodeDetails(node);
+    updateBreadcrumbs(nodeId);
+  }
 }
 
 function applyFocusHighlight(container) {
@@ -986,11 +1002,17 @@ function collapseFocused() {
 
 /**
  * Expand all ancestors of a node so it becomes visible in the flat list.
+ * Also expands the node itself if it's expandable (e.g., collapsed record).
  * Walks up the tree and expands each ancestor that is expandable.
  */
 function ensureNodeVisible(nodeId, projection) {
   const node = projection.nodes.get(nodeId);
   if (!node) return;
+
+  // Expand the matched node itself if expandable (e.g., for collapsed records/unions)
+  if (isNodeExpandable(node, projection)) {
+    expandedNodeIds.add(nodeId);
+  }
 
   // Collect ancestors from node up to root
   const ancestors = [];
@@ -1148,12 +1170,20 @@ function prevSearchMatch() {
 }
 
 /**
- * Focus a specific search match by index: set focusedIndex, scroll, show details.
+ * Focus a specific search match by index: expand if needed, set focusedIndex, scroll, show details.
  */
 function focusSearchMatch(matchIdx) {
   if (matchIdx < 0 || matchIdx >= searchResults.length) return;
 
   const nodeId = searchResults[matchIdx];
+  
+  // Ensure node and its ancestors are expanded
+  ensureNodeVisible(nodeId, currentProjection);
+  
+  // Re-render tree with new expand state
+  renderProjection(currentProjection);
+  
+  // Now find the node in the newly rendered flat list
   const flatIdx = flatVisibleNodes.findIndex((n) => n.id === nodeId);
 
   if (flatIdx >= 0) {
@@ -1162,7 +1192,10 @@ function focusSearchMatch(matchIdx) {
     applySearchHighlights();
     scrollFocusedIntoView();
     const node = currentProjection.nodes.get(nodeId);
-    if (node) renderNodeDetails(node);
+    if (node) {
+      renderNodeDetails(node);
+      updateBreadcrumbs(nodeId);
+    }
   }
 }
 
@@ -1711,11 +1744,54 @@ function renderPrimitiveDetails(node, panel) {
   const native = node.attributes.native;
 
   if (typeof native === "string") {
+    // Simple primitive (string format like "int", "string")
     panel.appendChild(buildReadonlyRow("type", native));
+
+    // Check if this primitive type can have logical types
+    const validLogicals = LOGICAL_TYPES[native] || [];
+    if (validLogicals.length > 1) {
+      // User can add a logical type - provide a selector
+      panel.appendChild(
+        buildSelectRow(
+          "logicalType",
+          validLogicals,
+          "",
+          (val) => {
+            if (!val) return;
+            // When user selects a logical type, convert to object format first
+            // This is a special update that replaces the entire native
+            const cmd = updateAttributeCommand(
+              {
+                nodeId: node.id,
+                scope: "native",
+                key: "type",
+                newValue: native, // Will be changed to object via first command
+              },
+              currentProjection,
+              refreshAfterMutation,
+            );
+            // Execute a sequence: first convert to object, then add logical type
+            const oldNative = node.attributes.native;
+            executeCommand(
+              new Command(
+                () => {
+                  node.attributes.native = { type: native, logicalType: val };
+                },
+                () => {
+                  node.attributes.native = oldNative;
+                },
+                refreshAfterMutation,
+                "Convert to object and add logicalType " + val,
+              ),
+            );
+          },
+        ),
+      );
+    }
     return;
   }
 
-  // Complex primitive (has logicalType or extra attrs)
+  // Complex primitive (object format with potential logicalType)
   panel.appendChild(buildReadonlyRow("base type", native.type));
 
   // Logical type (select from valid options for this base type)
@@ -2540,4 +2616,118 @@ function clearDetailPanel() {
   panel.appendChild(placeholder);
   const sidePanel = panel.closest(".side-panel");
   if (sidePanel) sidePanel.classList.remove("panel-active");
+}
+
+/**
+ * Get the breadcrumb path for a node (traversing parentId chain to root)
+ * Returns array of {nodeId, name, type} for each node in path
+ */
+function getBreadcrumbPath(nodeId) {
+  const path = [];
+  let current = currentProjection.nodes.get(nodeId);
+
+  while (current) {
+    const nat = current.attributes.native;
+    let name = nat.name || (typeof nat === "string" ? nat : current.kind);
+    let type = getNodeTypeCategory(current);
+
+    path.unshift({ nodeId: current.id, name, type });
+
+    if (!current.parentId) break;
+    current = currentProjection.nodes.get(current.parentId);
+  }
+
+  return path;
+}
+
+/**
+ * Get type category for breadcrumb coloring
+ */
+function getNodeTypeCategory(node) {
+  if (node.kind === "primitive") return "primitive";
+  if (node.kind === "union") return "union";
+  if (["record", "enum", "array", "map"].includes(node.kind))
+    return "complex";
+  return "default";
+}
+
+/**
+ * Render breadcrumbs for the currently focused node
+ */
+function updateBreadcrumbs(nodeId) {
+  const nav = document.getElementById("breadcrumbNav");
+  if (!nav) return;
+
+  // Clear existing breadcrumbs
+  while (nav.firstChild) nav.removeChild(nav.firstChild);
+
+  const path = getBreadcrumbPath(nodeId);
+  if (path.length === 0) {
+    nav.classList.add("hidden");
+    return;
+  }
+
+  nav.classList.remove("hidden");
+
+  // Build breadcrumb items
+  path.forEach((item, idx) => {
+    // Breadcrumb item (name + type)
+    const breadcrumbItem = el("div", "breadcrumb-item");
+    breadcrumbItem.classList.add("breadcrumb-type-" + item.type);
+
+    const nameSpan = el("span", "breadcrumb-name", item.name);
+    const typeSpan = el("span", "breadcrumb-type", item.type);
+
+    breadcrumbItem.appendChild(nameSpan);
+    breadcrumbItem.appendChild(typeSpan);
+
+    // Make it clickable (navigate to this node)
+    breadcrumbItem.addEventListener("click", () => {
+      focusNodeById(item.nodeId);
+    });
+
+    nav.appendChild(breadcrumbItem);
+
+    // Separator between items (not after last item)
+    if (idx < path.length - 1) {
+      const sep = el("span", "breadcrumb-sep", " > ");
+      nav.appendChild(sep);
+    }
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   SCHEMA STATS (Footer)
+════════════════════════════════════════════════════════════ */
+
+/**
+ * Update the schema stats display (field count, max depth)
+ */
+function updateSchemaStats() {
+  const statsContainer = document.getElementById("schemaStats");
+  if (!statsContainer || !currentProjection) return;
+
+  const stats = calculateSchemaStats(currentProjection);
+
+  // Clear existing stats
+  while (statsContainer.firstChild)
+    statsContainer.removeChild(statsContainer.firstChild);
+
+  statsContainer.classList.remove("hidden");
+
+  // Field count
+  const fieldCountItem = el("span", "stat-item");
+  fieldCountItem.appendChild(el("span", "", "Fields: "));
+  fieldCountItem.appendChild(
+    el("span", "stat-value", String(stats.fieldCount)),
+  );
+  statsContainer.appendChild(fieldCountItem);
+
+  // Max depth
+  const maxDepthItem = el("span", "stat-item");
+  maxDepthItem.appendChild(el("span", "", "Max Depth: "));
+  maxDepthItem.appendChild(
+    el("span", "stat-value", String(stats.maxDepth)),
+  );
+  statsContainer.appendChild(maxDepthItem);
 }

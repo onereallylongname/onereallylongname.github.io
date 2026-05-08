@@ -7,7 +7,7 @@
    Start Variables
    --------------------------------------------------------------------------*/
 
-const UNDO_LIMIT = 200;
+const UNDO_LIMIT = 500;
 
 // Stacks
 window.undoStack = [];

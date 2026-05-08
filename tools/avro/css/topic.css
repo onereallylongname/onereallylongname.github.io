@@ -25,14 +25,14 @@
   margin-right: 4px;
 }
 .badge-error {
-  background: #ffd9d9;
-  color: #a00000;
+  background: var(--badge-error-bg);
+  color: var(--badge-error-color);
 }
 .badge-warning {
-  background: #fff2c6;
-  color: #876600;
+  background: var(--badge-warning-bg);
+  color: var(--badge-warning-color);
 }
 .badge-ok {
-  background: #d8ffd8;
-  color: #006611;
+  background: var(--badge-ok-bg);
+  color: var(--badge-ok-color);
 }

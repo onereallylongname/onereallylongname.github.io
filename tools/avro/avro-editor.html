@@ -30,7 +30,6 @@
       </div>
 
       <div class="header">
-        <a class="themeButton" title="Go back to main page" href="">🏠</a>
         <!-- Theme picker dropdown -->
         <select id="theme-picker" class="themeButton"></select>
         <button
@@ -46,6 +45,56 @@
 
     <!-- COLLAPSIBLE CONCEPT PANEL (overlay) -->
     <section id="conceptPanel" class="concepts hidden">
+      <h2>Visual Guide — Schema Colors</h2>
+      <p>The tree uses color-coding to help identify type categories:</p>
+      <ul style="list-style: none; padding-left: 0">
+        <li style="margin: 8px 0">
+          <span
+            style="
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background: var(--primitive-color);
+              border-radius: 3px;
+              vertical-align: middle;
+              margin-right: 8px;
+            "
+          ></span>
+          <strong>Primitives</strong> (blue) — Scalar types: int, string,
+          boolean, bytes, etc. Can have logical types (date, timestamp, decimal,
+          uuid).
+        </li>
+        <li style="margin: 8px 0">
+          <span
+            style="
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background: var(--complex-color);
+              border-radius: 3px;
+              vertical-align: middle;
+              margin-right: 8px;
+            "
+          ></span>
+          <strong>Complex Types</strong> (brown) — Structured types: record,
+          enum, fixed, array, map. Allow nesting and composition.
+        </li>
+        <li style="margin: 8px 0">
+          <span
+            style="
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background: var(--union-color);
+              border-radius: 3px;
+              vertical-align: middle;
+              margin-right: 8px;
+            "
+          ></span>
+          <strong>Unions</strong> (gold) — Choice types: field can be multiple
+          types. Useful for optional fields or polymorphism.
+        </li>
+      </ul>
       <h2>Keyboard Shortcuts</h2>
       <h3>Navigation</h3>
       <ul>
@@ -118,16 +167,16 @@
 
     <!-- Footer: Load / Export / Undo-Redo -->
     <footer class="app-footer">
-      <div class="footer-group">
+      <div id="breadcrumbNav" class="breadcrumb-nav footer-group hidden"></div>
+      <div
+        id="undoRedoControls"
+        class="footer-group schema-stats undo-redo-controls"
+      >
         <input type="file" id="avscFileInput" accept=".avsc,application/json" />
         <button id="jsonToggleBtn" class="btn toggle-btn">JSON</button>
         <button id="newAvscBtn" class="btn">New</button>
-      </div>
-      <div class="footer-group">
         <button id="exportClipboardBtn" class="btn">Copy</button>
         <button id="exportFileBtn" class="btn">Export</button>
-      </div>
-      <div id="undoRedoControls" class="footer-group undo-redo-controls">
         <button id="undoBtn" class="themeButton" title="Undo (Ctrl+Z)">
           ↶
         </button>
@@ -135,6 +184,8 @@
         <button id="redoBtn" class="themeButton" title="Redo (Ctrl+Shift+Z)">
           ↷
         </button>
+        <span id="statsFieldCount" class="stat-item">Fields: 0</span>
+        <span id="statsMaxDepth" class="stat-item">Max Depth: 0</span>
       </div>
     </footer>
 

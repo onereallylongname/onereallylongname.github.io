@@ -1,8 +1,8 @@
 #toast {
   visibility: hidden;
   min-width: 140px;
-  background: #333;
-  color: #fff;
+  background: var(--toast-bg);
+  color: var(--toast-color);
   text-align: center;
   padding: 10px 16px;
   border-radius: 6px;

@@ -5,6 +5,8 @@ const THEME_NAMES = Object.freeze({
   "catppuccin-mocha": "Catppuccin Mocha",
   dracula: "Dracula",
   gruvbox: "Gruvbox",
+  "vscode-light": "VS Code Light",
+  "rose-pine": "Rose Pine",
 });
 let lastTheme;
 

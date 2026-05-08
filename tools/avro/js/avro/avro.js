@@ -12,6 +12,7 @@ function refreshAfterMutation() {
   rebuildPaths(currentProjection); // derived only
   currentSchema = generateAvroFromProjection(currentProjection);
   renderSchemaTree();
+  updateSchemaStats();
   refreshUndoRedoUI();
   // Re-render detail panel if a node is focused
   if (focusedIndex >= 0 && flatVisibleNodes[focusedIndex]) {

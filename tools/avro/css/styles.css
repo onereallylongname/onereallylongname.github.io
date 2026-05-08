@@ -6,13 +6,36 @@
   --bg: #f3f4f7;
   --text: #333;
   --text-light: #444;
+  --text-dim: #666;
   --section-bg: #fff;
   --chip-bg: #fff;
   --border: rgba(0, 0, 0, 0.1);
+  --box-shadow: rgba(0, 0, 0, 0.2);
   --header-bg: #334;
   --header-text: #fff;
   --btn-bg: #445;
   --btn-bg-hover: #556;
+  --btn-text: #fff;
+  --file-hover: #f0f0f0;
+  --file-label-bg: #f5f5f5;
+  --file-label-border: #ccc;
+  --separator-color: #888;
+  --error-border-color: #e57373;
+  --error-color: #c53030;
+  --error-bg-color: rgba(229, 83, 83, 0.1);
+  --accent: #0066ff;
+  --move-active-bg: rgba(59, 130, 246, 0.15);
+  --move-active-outline: rgba(59, 130, 246, 0.5);
+  --action-btn-hover: rgba(0, 0, 0, 0.06);
+  --badge-error-bg: #ffd9d9;
+  --badge-error-color: #a00000;
+  --badge-warning-bg: #fff2c6;
+  --badge-warning-color: #876600;
+  --badge-ok-bg: #d8ffd8;
+  --badge-ok-color: #006611;
+  --toast-bg: #333;
+  --toast-color: #fff;
+  --breadcrumb-sep: #aaa;
 }
 
 /* ============================================================
@@ -129,15 +152,21 @@ label {
 .btn {
   padding: 0.6rem 1.1rem;
   background: var(--btn-bg);
-  color: white;
+  color: var(--btn-text);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-right: 0.5rem;
-  transition: background 0.2s;
+  transition: background 200ms ease, transform 100ms ease, box-shadow 200ms ease;
 }
 .btn:hover {
   background: var(--btn-bg-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .toggle-btn.active {
@@ -156,7 +185,7 @@ label {
   background: var(--section-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px var(--box-shadow);
   z-index: 900;
   max-height: calc(100vh - 140px);
   overflow-y: auto;
